@@ -19,12 +19,11 @@ mongoose.connect(MONGO_DB_CONFIG.DB, {
     }
 );
 
-
+app.use(cors({ 'origin': '*' }));
 app.get('/', function (req, res) {
     res.send('This is the Home Page');
 });
-//
-app.use(cors());
+ 
 //
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
